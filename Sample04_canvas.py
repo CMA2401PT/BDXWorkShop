@@ -8,9 +8,9 @@ import_bdx_file2 = 'data/silo.bdx'
 mcstructure_file1 = 'data/27-2x3TrapDoorDoor.mcstructure'
 input_schematic_file = 'data/城市书店1.schematic'
 
-canvas_output = 'output/sample03/canvas_output.bdx'
-canvas_output_schematic = 'output/sample03/canvas_output_schematic.schematic'
-os.makedirs('output/sample03', exist_ok=True)
+canvas_output = 'output/sample04/canvas_output.bdx'
+canvas_output_schematic = 'output/sample04/canvas_output_schematic.schematic'
+os.makedirs('output/sample04', exist_ok=True)
 
 # 创建一个工作区，可以往工作区中导入多个建筑文件（目前支持：bdx, mcstructure）
 # setblock, fill,move,clone replace放置命令块, 清除区域内方块，

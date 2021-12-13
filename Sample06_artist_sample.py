@@ -1,10 +1,10 @@
 import os
 from canvas import Canvas
-from artists import BasicArtist
+from artists.basic import Artist as BasicArtist
 from canvas import irio
 
-canvas_output = 'output/sample05/canvas_output.bdx'
-os.makedirs('output/sample05', exist_ok=True)
+canvas_output = 'output/sample06/canvas_output.bdx'
+os.makedirs('output/sample06', exist_ok=True)
 
 canvas = Canvas()
 p = canvas

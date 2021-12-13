@@ -2,8 +2,8 @@ import os
 from canvas import irio
 from canvas import Canvas
 
-canvas_output = 'output/sample04/canvas_output.bdx'
-os.makedirs('output/sample04', exist_ok=True)
+canvas_output = 'output/sample05/canvas_output.bdx'
+os.makedirs('output/sample05', exist_ok=True)
 
 canvas = Canvas()
 p = canvas

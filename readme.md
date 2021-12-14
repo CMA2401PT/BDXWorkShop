@@ -65,12 +65,17 @@ Canvas 提供了一系列的功能，用以在 IR 中制作不同的结构，位
 ***1、2 参考 Sample04***  
 ***3 参考 Sample05***
 
-## Artist: 高级功能
+## Artist: 实现特定高级功能
 
-Artist 的目的是将复杂而高级的操作从 canvas 抽离出来,
+Artist 的目的是将复杂而高级的操作从 canvas 抽离出来, 属于高级功能
 避免 canvas 的成员函数过于复杂
 并允许用户自行定义复杂的操作,  
 虽然，截止到目前，还没有实现任何高级操作,不过，基本的范式已经定义了(artist/basic.py)
+由于 artiset 可能有复杂的依赖，所以默认不 import，而是按需 import
+
+现有 Artist:
+
+- cmd_midi_music: 将音乐转换为midi，再将midi转换为指令，目前为有限支持，仅考虑高音部由 bell， 中音部由 piano(harp)/pling(电子琴) 低音部由 bass 三个构成的组合，参见 ***Sample07***
 
 ## 其他:
 

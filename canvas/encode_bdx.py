@@ -432,7 +432,7 @@ class BdxEncoder(object):
                 with open(self.token, 'r') as f:
                     token = f.read()
             else:
-                assert isinstance(token, str)
+                assert isinstance(token, str),f'token is {token}'
             sign_bytes = self.sign(bdx_bytes, token)
             sign_len = len(sign_bytes)
             len_bytes = struct.pack('B', sign_len)

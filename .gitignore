@@ -2,6 +2,8 @@
 /output
 /fb
 !.gitkeep
+.vscode
+.empty
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -3,11 +3,10 @@ import os
 from canvas import Canvas
 import mido
 from collections import defaultdict
-try:
-    from piano_transcription_inference import PianoTranscription, sample_rate, load_audio
-except:
-    print('you may need to install piano_transcription_inference first if you want programe convert your music to midi automatically ')
-import mido
+# try:
+#     from piano_transcription_inference import PianoTranscription, sample_rate, load_audio
+# except:
+#     print('you may need to install piano_transcription_inference first if you want programe convert your music to midi automatically ')
 
 
 class Artist(Canvas):
@@ -121,20 +120,21 @@ class Artist(Canvas):
             if os.path.exists(file_name):
                 print(f'It seems that you have already convert tht music {music_file} to {file_name}')
             else:
-                try:
-                    from piano_transcription_inference import PianoTranscription, sample_rate, load_audio
-                    import torch
-                    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-                    print(
-                        "Let's convert your file to midi first, so you can directly use it the next time")
-                except:
-                    print('you may need to install piano_transcription_inference first if you want programe convert your music to midi automatically ')
-                    raise ImportError
-                (audio, _) = load_audio(music_file, sr=sample_rate, mono=True)
-                transcriptor = PianoTranscription(
-                    device=device, checkpoint_path=None)
-                transcribed_dict = transcriptor.transcribe(audio, file_name)
-            midi_file = file_name 
+            #     try:
+            #         from piano_transcription_inference import PianoTranscription, sample_rate, load_audio
+            #         import torch
+            #         device = 'cuda' if torch.cuda.is_available() else 'cpu'
+            #         print(
+            #             "Let's convert your file to midi first, so you can directly use it the next time")
+            #     except:
+            #         print('you may need to install piano_transcription_inference first if you want programe convert your music to midi automatically ')
+            #         raise ImportError
+            #     (audio, _) = load_audio(music_file, sr=sample_rate, mono=True)
+            #     transcriptor = PianoTranscription(
+            #         device=device, checkpoint_path=None)
+            #     transcribed_dict = transcriptor.transcribe(audio, file_name)
+            # midi_file = file_name 
+                raise NotImplementedError("you need convert music to mido yourself, maybe youcan try piano_transcription_inference")
         else:
             midi_file = music_file
         channels_msgs = self.get_simple_music_represet(

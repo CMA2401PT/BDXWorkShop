@@ -95,7 +95,14 @@ class BdxEncoder(object):
 
         self.author = author
         self.need_sign = need_sign
-        self.token = os.path.join(os.environ['HOME'],
+        if os.environ.get('HOME'):
+            HOME=os.environ['HOME']
+        elif os.environ.get('HOMEPATH'):
+            HOME=os.environ['HOMEPATH']
+        else:
+            print("cannot find user home, you may encounter error")
+            HOME="$HOME"
+        self.token = os.path.join(HOME,
                                   '.config/fastbuilder/fbtoken')
         if sign_token is not None:
             self.token = sign_token
@@ -241,10 +248,8 @@ class BdxEncoder(object):
         if self.author is None:
             self.need_sign = False
             print('author not set, cannot sign')
-        self.token = os.path.join(os.environ['HOME'],
-                                  '.config/fastbuilder/fbtoken')
         if sign_token is None:
-            token = sign_token
+            token = self.token
         if palette is None:
             palette=[]
         self.bdx_cmd_bytes = []

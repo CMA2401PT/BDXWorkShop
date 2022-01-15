@@ -1,4 +1,3 @@
-from os import major
 from .ir import IR
 import numpy as np
 

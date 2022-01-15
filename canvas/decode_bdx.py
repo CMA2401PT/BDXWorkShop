@@ -14,7 +14,7 @@ class BdxDecoder(object):
                  log_level=None) -> None:
         self.log_file = None
         if log_path is not None:
-            self.log_file = open(log_path, 'w+')
+            self.log_file = open(log_path, 'w')
         else:
             print('decoder log file not set, send to screen')
         self.log_level = {
@@ -354,6 +354,7 @@ class BdxDecoder(object):
         redstone = self._get_val(l=1) == 1
         self._print_pos()
         self.log(f'{block_name}[{block_id}]({block_val}) mode={mode_name}')
+        print(command)
         self.log(f'command={command}')
         self.log(f'cb_name={cb_name}')
         self.log(f'lastout={lastout}')

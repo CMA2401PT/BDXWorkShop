@@ -1,6 +1,7 @@
 .DS_Store
 /output
 /fb
+fb*
 !.gitkeep
 .vscode
 .empty

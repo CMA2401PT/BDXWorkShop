@@ -75,7 +75,11 @@ Artist 的目的是将复杂而高级的操作从 canvas 抽离出来, 属于高
 
 现有 Artist:
 
-- cmd_midi_music: 将音乐转换为midi，再将midi转换为指令，目前为有限支持，仅考虑高音部由 bell， 中音部由 piano(harp)/pling(电子琴) 低音部由 bass 三个构成的组合，参见 ***Sample07***
+- cmd_midi_music: 将音乐转换为midi，再将midi转换为指令，目前为有限支持，仅考虑高音部由 bell， 中音部由 piano(harp)/pling(电子琴) 低音部由 bass 三个构成的组合，参见 Sample07_cmd_music.py
+
+- map_art: 校色+dither算法实现更精准的色彩生成，支持拼接+阴影（需要占用y轴空间) Sample08_map _art.py
+
+ ***Sample07***
 
 ## 其他:
 

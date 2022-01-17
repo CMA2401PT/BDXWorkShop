@@ -174,8 +174,20 @@ class Artist(Canvas):
         self.target_canvas.load_ir(self_host_ir, merge=True, **self.target_xyz)
         return self
 
+    def auto_adjust_img(self,img:Image,raito):
+        img_np = np.array(img)
+        h,w,_=img_np.shape
+        if h/w>raito:
+            sh=int((h-raito*w)/2)
+            img_np=img_np[sh:min(sh+int(raito*w),h),:]
+        elif h/w <raito:
+            sw=int((w-h/raito)/2)
+            img_np=img_np[:,sw:min(sw+int(h/raito),w)]
+        return Image.fromarray(img_np)
+
     def add_img(self, img_path: str, level_x=1, level_y=1, d3=False, save_resized_file_to=None, save_preview_to=None, y_max=100):
         img = Image.open(img_path)
+        img= self.auto_adjust_img(img,level_y/level_x)
         if not d3:
             block_map, converted_img, resized_img = convert_img(
                 img, level_x, level_y, d3=False)

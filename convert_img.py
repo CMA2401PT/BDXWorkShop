@@ -1,4 +1,4 @@
-from ast import arg
+import shutil
 import os
 from canvas import Canvas
 from canvas import irio
@@ -18,6 +18,7 @@ if __name__ =="__main__":
     output_dir=args.o
     if output_dir is None:
         output_dir='.'.join(args.file.split('.')[:-1])
+    
     os.makedirs(output_dir,exist_ok=True)
     
     if args.y!=0:
@@ -44,3 +45,5 @@ if __name__ =="__main__":
                         os.path.join(output_dir,"map.bdx"), # 保存文件路径
                         need_sign=True,
                         author='2401PT')
+    print(f'output to {output_dir}')
+    shutil.copy(args.file,os.path.join(output_dir,os.path.split(args.file)[1]))

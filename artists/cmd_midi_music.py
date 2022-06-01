@@ -138,7 +138,7 @@ class Artist(Canvas):
         else:
             midi_file = music_file
         channels_msgs = self.get_simple_music_represet(
-            mido.MidiFile(midi_file))
+            mido.MidiFile(midi_file,clip=True))
 
         # 在游戏的每个tick的所有note
         # mixed_notes_by_tick = defaultdict(lambda: [])

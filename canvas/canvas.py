@@ -117,11 +117,13 @@ class Canvas(object):
         if block_name is None:
             block_name = [self.CB, self.REPEAT_CB, self.CHAIN_CB][cb_mode]
         if cb_mode is None:
-            cb_mode = {
+            print(block_name)
+            cb_mode = int({
                 self.CB: self.MODE_CB,
                 self.REPEAT_CB: self.MODE_REPEAT_CB,
-                self.CHAIN_CB: self.CHAIN_CB
-            }[block_name]
+                self.CHAIN_CB: self.MODE_CHAIN_CB
+            }[block_name])
+            print(cb_mode)
         cb_data = (cb_mode, command, cb_name, '', tick_delay,
                    execute_on_first_tick, track_output, conditional, needRedstone)
         self._append_block(x, y, z, (block_name, facing, cb_data))

@@ -17,18 +17,21 @@ class Artist(Canvas):
 
         #   表示对应音效 最高阶，中间阶(为1时)，和最低阶，每一阶频率变换是 2^(1/12)
         self.instruments = {
-            'bell':  (102, 90, 78),
-            'harp': (78, 66, 54),
-            'pling': (78, 66, 54),
-            'bass':  (54, 42, 30),
-            'guitar': (66, 54, 42),
+            'note.bell':  (102, 90, 78),
+            'note.harp': (78, 66, 54),
+            'note.pling': (78, 66, 54),
+            'note.bass':  (54, 42, 30),
+            'note.guitar': (66, 54, 42),
+            'note.bit': (78, 66, 54), # add by SuperScript @ DotCS Group Chat
         }
+        
+        
         
         self.default_instrumentes_mapping=defaultdict(lambda :[
             (30,None),
-            (54,'bass'),
-            (78,'harp'),
-            (102,'bell'),
+            (54,'note.bass'),
+            (78,'note.harp'),
+            (102,'note.bell'),
             (128,None)
         ])
 
